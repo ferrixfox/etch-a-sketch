@@ -1,6 +1,14 @@
 const row = document.createElement('row')
 const square = document.createElement('div');
 
-//can i do 16 divs with 16 divs inside?
+// event listener to all buttons
+btns = document.querySelectorAll('button');
+console.log(btns);
+
+for (button of btns){
+    button.addEventListener('click', function (){
+        alert(button.id)
+    })
+}
 
 

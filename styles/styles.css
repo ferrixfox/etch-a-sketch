@@ -2,7 +2,14 @@
     display: flex;
 }
 
-.title{
+.header{
     text-align: center;
     font-size: 40px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
