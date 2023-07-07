@@ -5,17 +5,22 @@ function gridGenerator(button_id){
     for (let i = size; i >= 0; i--){
         let row = document.createElement('div')
         row.style.cssText = 
-            'height: 20px; display: flex';
-        container.appendChild(row);
+            'display: flex; border: black 0.5px solid; justify-content: space-evenly; height: 100%;'
+        container.appendChild(row)
         for (let j = size; j >= 0; j--){
             let square = document.createElement('div');
-            square.style.cssText = 'border-color: black; border-style: solid; width: 20px';
+            square.style.cssText = 'border-color: black; border: 0.5px solid;'
             row.appendChild(square)
         }
     }
 }
 
-// event listener to all buttons
+function resetGrid(){
+    //create function that will reset the grid-size to 16x16
+    //need to call this function onclick and on load of the page
+}
+
+
 btns = document.querySelectorAll('button');
 
 for (button of btns){
@@ -24,5 +29,4 @@ for (button of btns){
     })
 }
 
-//on click the button function should call a function which gets  the id of the button and passes it into a gridGenerator function.
 
