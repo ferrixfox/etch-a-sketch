@@ -1,16 +1,17 @@
 function gridGenerator(button_id){
-    let size = parseButtonId(button_id);
-    console.log(size);
-    //const row = document.createElement('row')
-    //const square = document.createElement('div');
-    // use the button Id to generate a grid
-}
-
-function parseButtonId(button_id){
-    //needs to convert the Button ID into an integer using slice and parseInt
-    let num = button_id.slice(1, );
-    return Number(num);
+    let size = Number(button_id)
     
+    const container = document.querySelector('.container');
+    for (let i = size; i >= 0; i--){
+        let row = document.createElement('div')
+        row.style.cssText = 'border-color: black; border-style: solid; min-width: 20px; height: 20px';
+        container.appendChild(row);
+        //for (let j = size; j >= 0; j--){
+          //  let square = document.createElement('div');
+            //square.style.cssText = 'background-color: light-blue';
+            //row.appendChild(square)
+        }
+    }
 }
 
 // event listener to all buttons
@@ -18,8 +19,7 @@ btns = document.querySelectorAll('button');
 
 for (button of btns){
     button.addEventListener('click', function (){
-        let btnidentity = button.id;
-        gridGenerator(btnidentity);
+        gridGenerator(this.value);
     })
 }
 
