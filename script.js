@@ -8,10 +8,18 @@ function gridGenerator(size){
             'display: flex; border: black 0.5px solid; justify-content: space-evenly; height: 100%;'
         container.appendChild(row)
         for (let j = size; j >= 0; j--){
-            let square = document.createElement('div');
-            square.style.cssText = 'border-color: black; border: 0.5px solid;'
-            row.appendChild(square)
+            let squares = document.createElement('div');
+            squares.style.cssText = 'border-color: black; border: 0.5px solid; width: 100%';
+            //squares.addEventListener("mouseover", function(){
+                //squares.style.cssText = 'background-color: black';
+           // })
+            row.appendChild(squares);
         }
+    }
+    for (square of squares){
+        square.addEventListener("mouseover", function(){
+            square.style.cssText = 'background-color: black';
+        })
     }
 }
 
@@ -21,6 +29,7 @@ function clearGrid(){
         container.removeChild(container.firstChild);
     }
 }
+
 
 gridGenerator(16);
 
