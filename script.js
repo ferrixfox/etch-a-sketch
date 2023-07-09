@@ -28,19 +28,31 @@ function draw (){
     const squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
-            square.classList.add('black');  
+            square.classList.add('black');
         });
     });
 };
 
-
+function erase(){
+    const boxes = document.querySelectorAll('.square')
+    for (box of boxes){
+        box.addEventListener("mouseover", function() {
+            if (this.classList.contains("black")) {
+              this.classList.remove("black");
+            };
+        });
+    };
+}
 
 gridGenerator(16);
 
-btns = document.querySelectorAll('button');
+btns = document.querySelectorAll('.size');
 
 for (button of btns){
     button.addEventListener('click', function (){
         gridGenerator(Number(this.value));
     })
 }
+
+const eraser = document.querySelector('.eraser');
+eraser.addEventListener('click', erase);
