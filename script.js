@@ -1,5 +1,4 @@
-function gridGenerator(button_id){
-    let size = Number(button_id)
+function gridGenerator(size){
     
     const container = document.querySelector('.container');
     for (let i = size; i >= 0; i--){
@@ -25,7 +24,7 @@ btns = document.querySelectorAll('button');
 
 for (button of btns){
     button.addEventListener('click', function (){
-        gridGenerator(this.value);
+        gridGenerator(Number(this.value));
     })
 }
 
