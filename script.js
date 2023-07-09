@@ -8,19 +8,13 @@ function gridGenerator(size){
             'display: flex; border: black 0.5px solid; justify-content: space-evenly; height: 100%;'
         container.appendChild(row)
         for (let j = size; j >= 0; j--){
-            let squares = document.createElement('div');
-            squares.style.cssText = 'border-color: black; border: 0.5px solid; width: 100%';
-            //squares.addEventListener("mouseover", function(){
-                //squares.style.cssText = 'background-color: black';
-           // })
-            row.appendChild(squares);
+            let square = document.createElement('div');
+            square.style.cssText = 'border-color: black; border: 0.5px solid; width: 100%';
+            square.classList.add('square');
+            row.appendChild(square);
         }
     }
-    for (square of squares){
-        square.addEventListener("mouseover", function(){
-            square.style.cssText = 'background-color: black';
-        })
-    }
+    draw();
 }
 
 function clearGrid(){
@@ -29,6 +23,16 @@ function clearGrid(){
         container.removeChild(container.firstChild);
     }
 }
+
+function draw (){
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.classList.add('black');  
+        });
+    });
+};
+
 
 
 gridGenerator(16);
