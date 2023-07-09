@@ -1,4 +1,5 @@
 function gridGenerator(size){
+    clearGrid();
     
     const container = document.querySelector('.container');
     for (let i = size; i >= 0; i--){
@@ -14,11 +15,14 @@ function gridGenerator(size){
     }
 }
 
-function resetGrid(){
-    //create function that will reset the grid-size to 16x16
-    //need to call this function onclick and on load of the page
+function clearGrid(){
+    let container = document.querySelector('.container')
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
 }
 
+gridGenerator(16);
 
 btns = document.querySelectorAll('button');
 
@@ -27,5 +31,3 @@ for (button of btns){
         gridGenerator(Number(this.value));
     })
 }
-
-
